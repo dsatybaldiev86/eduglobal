@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-light-grey text-navy;
+  }
+
+  /* Keep sticky-navbar clear of anchored sections */
+  [id] {
+    scroll-margin-top: 5rem;
+  }
+}
+
+@layer components {
+  /* Solid red call-to-action */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors duration-200 hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+  }
+
+  /* Outlined button for use on dark backgrounds */
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/60 px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:border-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy;
+  }
+
+  /* Shared keyboard focus ring for links, tags, selects */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+  }
+
+  .nav-link {
+    @apply rounded-md px-3 py-2 text-sm font-medium text-navy/80 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+  }
+
+  /* Full-width outlined button on white backgrounds (e.g. social sign-in) */
+  .btn-outline-navy {
+    @apply inline-flex w-full items-center justify-center gap-2 rounded-lg border border-navy/15 bg-white px-4 py-2.5 text-sm font-semibold text-navy transition-colors hover:bg-light-grey focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+  }
+
+  /* Hide scrollbar on the horizontal university rail while keeping it scrollable */
+  .no-scrollbar {
+    scrollbar-width: thin;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    height: 8px;
+  }
+  .no-scrollbar::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-navy/15;
+  }
+}
+
+/* Honor users who prefer minimal motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dual-handle tuition range slider (Университеты). Two <input type="range">
+   overlay a shared track; only the thumbs receive pointer events so both
+   handles stay draggable, and each remains natively keyboard-adjustable. */
+.range-input {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1.25rem;
+  margin: 0;
+  transform: translateY(-50%);
+  background: transparent;
+  pointer-events: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.range-input:focus {
+  outline: none;
+}
+.range-input::-webkit-slider-runnable-track {
+  height: 100%;
+  background: transparent;
+}
+.range-input::-moz-range-track {
+  height: 100%;
+  background: transparent;
+}
+.range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  pointer-events: auto;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 9999px;
+  background: #c8102e;
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 3px rgba(10, 37, 64, 0.4);
+  cursor: pointer;
+}
+.range-input::-moz-range-thumb {
+  pointer-events: auto;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 9999px;
+  background: #c8102e;
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 3px rgba(10, 37, 64, 0.4);
+  cursor: pointer;
+}
+.range-input:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid #0a2540;
+  outline-offset: 2px;
+}
+.range-input:focus-visible::-moz-range-thumb {
+  outline: 2px solid #0a2540;
+  outline-offset: 2px;
+}

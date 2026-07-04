@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx --yes create-next-app@14 . --js --tailwind --app --eslint --no-src-dir --import-alias \"@/*\")",
+      "Bash(npm install *)",
+      "Bash(node -e \"const p=require\\('./node_modules/next/package.json'\\).version; console.log\\('next', p\\)\")",
+      "Bash(node -e \"console.log\\('react', require\\('./node_modules/react/package.json'\\).version\\)\")",
+      "Bash(node -e \"console.log\\('tailwindcss', require\\('./node_modules/tailwindcss/package.json'\\).version\\)\")",
+      "Bash(node -e \"console.log\\('lucide-react', require\\('./node_modules/lucide-react/package.json'\\).version\\)\")",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/ --max-time 60)",
+      "Bash(curl -s http://localhost:3000/ --max-time 60)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/ --max-time 60)",
+      "Bash(curl -s http://localhost:3001/ --max-time 60)",
+      "Bash(netstat -ano)",
+      "PowerShell(try { Stop-Process -Id 22552 -Force -ErrorAction Stop; Write-Output \"Killed PID 22552\" } catch { Write-Output \"Could not kill 22552: $_\" }; Start-Sleep -Milliseconds 500; $still = Get-NetTCPConnection -LocalPort 3000 -State Listen -ErrorAction SilentlyContinue; if \\($still\\) { Write-Output \"3000 still listening\" } else { Write-Output \"Port 3000 is free\" })",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/login --max-time 90)",
+      "Bash(curl -s http://localhost:3000/login --max-time 90)"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(foreach \\($procId in 4128, 11852\\) { try { Stop-Process -Id $procId -Force -ErrorAction Stop; Write-Output \"Killed PID $procId\" } catch { Write-Output \\(\"Could not kill {0}: {1}\" -f $procId, $_\\) } }; Start-Sleep -Milliseconds 500; foreach \\($port in 3000, 3001\\) { $c = Get-NetTCPConnection -LocalPort $port -State Listen -ErrorAction SilentlyContinue; if \\($c\\) { Write-Output \"Port $port still listening\" } else { Write-Output \"Port $port free\" } })",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/ --max-time 90)",
+      "Bash(curl -s http://localhost:3000/ --max-time 90)"
+    ]
+  }
+}
