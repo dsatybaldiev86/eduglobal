@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import FlightPathSvg from "@/components/FlightPathSvg";
-import CampusScene from "@/components/CampusScene";
 
 export default function Hero() {
   return (
@@ -64,7 +63,11 @@ export default function Hero() {
 
           <div className="relative mx-auto max-w-md">
             <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/10 to-primary/20 shadow-2xl">
-              <CampusScene className="aspect-[6/7] h-full w-full" />
+              <img
+                src="/images/University1.jpg"
+                alt="University campus"
+                className="aspect-[6/7] h-full w-full object-cover"
+              />
             </div>
             {/* Floating badge */}
             <div className="absolute -bottom-5 -left-5 hidden rounded-2xl bg-white p-4 text-navy shadow-xl sm:block">

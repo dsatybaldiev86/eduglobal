@@ -13,7 +13,11 @@ export default function SupportBanner() {
         {/* Advisor image */}
         <div className="relative">
           <div className="overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 to-primary/20">
-            <CampusScene className="aspect-[9/6] h-full w-full" />
+            <img
+              src="/images/u4.jpg"
+              alt="Consulting support"
+              className="aspect-[9/6] h-full w-full object-cover"
+            />
           </div>
           <div className="absolute -bottom-5 right-6 hidden rounded-2xl bg-primary px-5 py-3 text-white shadow-xl sm:block">
             <p className="font-heading text-lg font-bold">Бесплатный звонок консультанту</p>

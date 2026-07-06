@@ -14,6 +14,7 @@ const UNIVERSITIES = [
     programs: 320,
     initials: "NU",
     logoColor: "#0A2540",
+    image: "/images/u1.jpg",
   },
   {
     id: "pacific-tech",
@@ -23,6 +24,7 @@ const UNIVERSITIES = [
     programs: 410,
     initials: "PT",
     logoColor: "#C8102E",
+    image: "/images/u2.jpg",
   },
   {
     id: "maple-crown",
@@ -32,6 +34,7 @@ const UNIVERSITIES = [
     programs: 280,
     initials: "MC",
     logoColor: "#0A2540",
+    image: "/images/u3.jpg",
   },
   {
     id: "harbourfield",
@@ -41,6 +44,7 @@ const UNIVERSITIES = [
     programs: 300,
     initials: "HU",
     logoColor: "#C8102E",
+    image: "/images/u4.jpg",
   },
   {
     id: "rhineland",
@@ -50,6 +54,7 @@ const UNIVERSITIES = [
     programs: 260,
     initials: "RU",
     logoColor: "#0A2540",
+    image: "/images/u1.jpg",
   },
   {
     id: "delta-bay",
@@ -59,6 +64,7 @@ const UNIVERSITIES = [
     programs: 240,
     initials: "DB",
     logoColor: "#C8102E",
+    image: "/images/u2.jpg",
   },
 ];
 
@@ -107,7 +113,11 @@ export default function TopUniversities() {
               <li key={u.id} className="w-72 shrink-0 snap-start">
                 <article className="group h-full overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-sm transition-shadow duration-200 hover:shadow-lg">
                   <div className="relative h-40 bg-gradient-to-br from-navy to-primary/70">
-                    <CampusScene className="h-full w-full" flip={index % 2 === 1} />
+                    <img
+                      src={u.image}
+                      alt={`${u.name} campus`}
+                      className="h-full w-full object-cover"
+                    />
                     <button
                       type="button"
                       onClick={() => toggleFavorite(u.id)}
