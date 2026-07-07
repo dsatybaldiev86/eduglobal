@@ -9,7 +9,7 @@ const NAV_LINKS = [
   { label: "Университеты", href: "/universities" },
   { label: "Программы", href: "#" },
   { label: "Заявки", href: "#" },
-  { label: "Консультации", href: "#" },
+  { label: "Консультации", href: "/consultations" },
   { label: "Ресурсы", href: "#" },
 ];
 
